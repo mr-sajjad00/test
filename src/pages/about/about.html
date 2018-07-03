@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        About
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+      
+    <!--- <ion-list>
+  
+      <ion-item *ngFor="let item of items | async">
+    
+      <h2> {{item.name}}</h2>
+      <p> {{item.name}}</p>
+      </ion-item>
+    
+    </ion-list> -->
+    <ion-list>
+        <ion-item-sliding>
+          <ion-item *ngFor="let item of items | async">
+             
+            <ion-avatar item-start>
+              <img src="../../assets/imgs/1.png">
+            </ion-avatar>
+            <h2> key = {{item.payload.key}}</h2>
+            <h2>{{item.payload.val().name}}</h2>
+            <p>{{item.payload.val().text}} </p>
+        
+          </ion-item>
+          <ion-item-options side="left">
+              
+    
+            <button ion-button color="primary" (click)="editData(item.payload.key)">
+              <ion-icon name="create"></ion-icon>
+              Edit
+            </button>
+            <button ion-button color="secondary" (click)="removeData(item.payload.key)">
+              <ion-icon name="trash"></ion-icon>
+              Delete
+            </button>
+          </ion-item-options>
+         
+        </ion-item-sliding>
+      
+      </ion-list>
+  
+  
+    
+  </ion-content>
+  

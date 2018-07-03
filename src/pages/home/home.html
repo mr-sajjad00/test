@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Data List</ion-title>
+    
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  
+  
+  <ion-list >
+
+    <ion-item >
+      <ion-label floating>name</ion-label>
+      <ion-input type="text" #name> </ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>info</ion-label>
+      <ion-input type="text" #info> </ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <div padding>
+    <button ion-button color="primary" block (click)="add(name.value,info.value)" >ADD </button>
+  </div>
+</ion-content>
